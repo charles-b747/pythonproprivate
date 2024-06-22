@@ -51,4 +51,12 @@ async def photos_show(ctx):
         image = discord.File(f, filename=randomowy)
         await ctx.send(file=image)
 
+@bot.command()
+async def animals(ctx):
+    nazwy = os.listdir('animal_memes')
+    randomowy = random.choice(nazwy)
+    with open('animal_memes/' + randomowy, 'rb') as f:
+        image = discord.File(f, filename=randomowy)
+        await ctx.send(file=image)
+
 bot.run("YOUR TOKEN")
