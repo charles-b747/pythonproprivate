@@ -4,6 +4,7 @@ import random
 import requests
 import os
 import bot_logic_password
+import eco_tips
 
 intents = discord.Intents.default()
 intents.messages = True
@@ -41,7 +42,7 @@ async def bye(ctx):
 
 @bot.command()
 async def show_tips(ctx):
-    await ctx.send(eco_tips.tips)
+    await ctx.send(eco_tips.tips())
 
 @bot.command()
 async def generate_password(ctx, length=8):
